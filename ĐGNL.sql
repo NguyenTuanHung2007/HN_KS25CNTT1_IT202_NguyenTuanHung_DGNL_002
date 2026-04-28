@@ -92,9 +92,9 @@ ALTER TABLE Members
 ADD COLUMN gender VARCHAR(10);
 
 -- 10. Liệt kê tất cả các lớp học có chuyên môn liên quan đến "Strength" hoặc "Fitness".
-SELECT c.*
-FROM Classes c
-JOIN Trainers t ON c.trainer_id = t.trainer_id
+SELECT c.* FROM Classes AS c
+JOIN Trainers AS t 
+ON c.trainer_id = t.trainer_id
 WHERE t.specialty LIKE '%Strength%' OR t.specialty LIKE '%Fitness%';
 
 -- 11. Lấy thông tin full_name, email của những thành viên có tên chứa ký tự 'n' .
